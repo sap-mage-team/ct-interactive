@@ -9,5 +9,8 @@ applications:
     random-route: true
     command: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
     env:
+      BP_PYTHON_VERSION: 3.11.12          # <-- this is the key line
       STREAMLIT_SERVER_HEADLESS: "true"
       STREAMLIT_BROWSER_GATHER_USAGE_STATS: "false"
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      PIP_NO_CACHE_DIR: "1"

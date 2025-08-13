@@ -1,11 +1,21 @@
-# contexttab_app/requirements.txt
-streamlit==1.32.0
-pandas==1.5.3
-numpy==1.23.5
-scikit-learn==1.1.3
-openpyxl==3.1.2
-requests==2.31.0
+# --- App / UI ---
+streamlit
 
-# Optional but recommended if you want to try learned imputation.
-# Comment out if your CF org has strict build timeouts or egress limits.
+# --- Data stack (compatible wheels on Linux x86_64, Python 3.11) ---
+pandas
+numpy
+openpyxl
+scikit-learn
+
+# --- HF / inference stack ---
+huggingface_hub
+transformers
+tokenizers
+safetensors
+pyzmq
+
+# --- PyTorch CPU (matches Py 3.11 wheels) ---
+torch
+
+# --- ConTextTab (pulls latest, needs pandas>=2.2.3 & sklearn>=1.6.1) ---
 git+https://github.com/SAP-samples/contexttab
