@@ -1,16 +1,14 @@
-# contexttab_app/manifest.yml
 applications:
   - name: contexttab-demo
-    path: .
+    path: contexttab_app            # <— DIRECTORY, not app.py
     memory: 2G
-    instances: 1
-    buildpacks:
-      - python_buildpack
-    random-route: true
+    disk_quota: 4G
     command: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+    buildpacks:
+      - paketo-buildpacks/python
     env:
-      BP_PYTHON_VERSION: 3.11.12          # <-- this is the key line
-      STREAMLIT_SERVER_HEADLESS: "true"
-      STREAMLIT_BROWSER_GATHER_USAGE_STATS: "false"
+      BP_PYTHON_VERSION: 3.11.*
+      PIP_INDEX_URL: https://download.pytorch.org/whl/cpu
+      PIP_EXTRA_INDEX_URL: https://pypi.org/simple
       PIP_DISABLE_PIP_VERSION_CHECK: "1"
       PIP_NO_CACHE_DIR: "1"

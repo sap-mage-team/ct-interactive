@@ -1,0 +1,21 @@
+# App/UI
+streamlit>=1.30,<2
+
+# Data stack
+pandas>=2.2,<3
+numpy>=1.26,<2
+openpyxl>=3.1,<4
+scikit-learn>=1.6,<2
+
+# HF stack
+transformers>=4.41,<4.43
+tokenizers>=0.19,<0.20
+safetensors>=0.4,<0.5
+huggingface_hub>=0.23,<0.24
+pyzmq>=25,<26
+
+# Torch — no +cpu here; we’ll force CPU via index
+torch>=2.3,<2.8
+
+# ConTextTab
+git+https://github.com/SAP-samples/contexttab

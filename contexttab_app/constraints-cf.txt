@@ -1,0 +1,6 @@
+# Force CPU torch (exact pin needed because of the +cpu local version tag)
+torch==2.3.1+cpu
+
+# (Optional) lock the pandas/ sklearn minimums required by contexttab explicitly
+pandas>=2.2.3
+scikit-learn>=1.6.1
